@@ -1,0 +1,130 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    background-image: url("../bg.jpg");  /* ✅ uses bg.jpg from static folder */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 32px;
+    color: #007bff;
+    margin-bottom: 30px;
+}
+
+input[type="file"] {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.btn-blue {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-blue:hover {
+    background-color: #0056b3;
+}
+
+.result {
+    margin-top: 30px;
+    background-color: #e6f2ff;
+    border: 2px solid #b3d1ff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.result h2 {
+    color: #007bff;
+    font-size: 24px;
+}
+
+.result p {
+    font-size: 18px;
+    color: #333333;
+    margin-top: 10px;
+}
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #0e0e0e;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .upload-section {
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+  }
+
+  input[type="file"] {
+    margin: 1rem 0;
+    width: 100%;
+    color: white;
+  }
+
+  .predict-btn {
+    background-color: #1dbf73;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .result {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #66ff66;
+    max-width: 500px;
+  }
+</style>
