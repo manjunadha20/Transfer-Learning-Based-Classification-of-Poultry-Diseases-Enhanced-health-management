@@ -3,25 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <title>PoultryDetect - Home</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #fef9e7;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #2e86c1;
+            color: white;
+            padding: 15px;
+            text-align: right;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
+            color: #2c3e50;
+        }
+
+        p {
+            text-align: center;
+            color: #555;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .result-box {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #eaf2f8;
+            padding: 20px;
+            border-left: 5px solid #2e86c1;
+            border-radius: 8px;
+            font-size: 1.2em;
+            display: block;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-box h2 {
+            margin-top: 0;
+        }
+
+        strong {
+            color: #154360;
+        }
+    </style>
 </head>
-<body style="background-color: lightgoldenrodyellow;">
-    <nav style="text-align: right;">
-        <a href="{{ url_for('home') }}">Home</a> |
-        <a href="{{ url_for('about') }}">About</a> |
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('about') }}">About</a>
         <a href="{{ url_for('contact') }}">Contact</a>
     </nav>
-    <h1 style="text-align: center;">Welcome to PoultryDetect</h1>
-    <p style="text-align: center;">Upload an image of poultry or fecal sample to get a disease prediction.</p>
 
-    <form action="/predict" method="POST" enctype="multipart/form-data" style="text-align: center;">
-        <input type="file" name="file" accept="image/*" required>
-        <br><br>
+    <h1>Welcome to PoultryDetect</h1>
+    <p>Upload an image of poultry or fecal sample to get a disease prediction.</p>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required><br><br>
         <button type="submit">Predict</button>
     </form>
 
     {% if disease %}
-    <div style="text-align:center; margin-top:20px;">
-        <h2>Prediction:</h2>
+    <div class="result-box">
+        <h2>Prediction Result</h2>
         <p>Disease: <strong>{{ disease }}</strong></p>
         <p>Treatment: <strong>{{ treatment }}</strong></p>
     </div>
