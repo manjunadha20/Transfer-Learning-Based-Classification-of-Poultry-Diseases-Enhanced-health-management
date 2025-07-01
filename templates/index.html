@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PoultryDetect - Home</title>
+</head>
+<body style="background-color: lightgoldenrodyellow;">
+    <nav style="text-align: right;">
+        <a href="{{ url_for('home') }}">Home</a> |
+        <a href="{{ url_for('about') }}">About</a> |
+        <a href="{{ url_for('contact') }}">Contact</a>
+    </nav>
+    <h1 style="text-align: center;">Welcome to PoultryDetect</h1>
+    <p style="text-align: center;">Upload an image of poultry or fecal sample to get a disease prediction.</p>
+
+    <form action="/predict" method="POST" enctype="multipart/form-data" style="text-align: center;">
+        <input type="file" name="file" accept="image/*" required>
+        <br><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if disease %}
+    <div style="text-align:center; margin-top:20px;">
+        <h2>Prediction:</h2>
+        <p>Disease: <strong>{{ disease }}</strong></p>
+        <p>Treatment: <strong>{{ treatment }}</strong></p>
+    </div>
+    {% endif %}
+</body>
+</html>
